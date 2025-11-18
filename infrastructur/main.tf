@@ -51,10 +51,11 @@ resource "azurerm_linux_web_app" "webapp" {
   }
 
   app_settings = {
-    "SCM_DO_BUILD_DURING_DEPLOYMENT"  = "true"
-    "WEBSITE_RUN_FROM_PACKAGE"        = "1"
-    "AZURE_LANGUAGE_SERVICE_ENDPOINT" = azurerm_cognitive_account.language.endpoint
-    "AZURE_LANGUAGE_SERVICE_KEY"      = azurerm_cognitive_account.language.primary_access_key
+    SCM_DO_BUILD_DURING_DEPLOYMENT = "true"
+    WEBSITE_RUN_FROM_PACKAGE       = "1"
+
+    AZ_ENDPOINT = azurerm_cognitive_account.language.endpoint
+    AZ_KEY      = azurerm_cognitive_account.language.primary_access_key
   }
 }
 
