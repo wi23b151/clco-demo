@@ -53,6 +53,5 @@ resource "azurerm_linux_web_app" "webapp" {
 
   app_settings = {
     "SCM_DO_BUILD_DURING_DEPLOYMENT" = "true"
-    "WEBSITE_RUN_FROM_PACKAGE"       = "1"
   }
 }
